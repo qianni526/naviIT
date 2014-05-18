@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="5dp"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+	    <TextView
+	        android:id="@+id/textView1"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:padding="10dp"
+	        android:text="Edit event"
+	        android:textColor="#8066FF"
+        	android:textStyle="bold"    
+	        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+	    <ImageButton
+	        android:id="@+id/btDiscard"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentRight="true"
+	        android:layout_centerVertical="true"
+	        android:layout_marginRight="14dp"
+	        android:background="@null"
+	        android:src="@drawable/ic_action_discard" />
+	    
+    </RelativeLayout>
+
+    <ScrollView
+    android:id="@+id/scrollView1"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+
+	    <LinearLayout
+	        android:layout_width="match_parent"
+	        android:layout_height="match_parent"
+	        android:orientation="vertical" >
+	    
+	        <EditText
+	        android:id="@+id/etTitle"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:singleLine="true"
+	        android:hint="Event Name"
+	        android:padding="10dp"
+	        android:ems="10" >
+	
+	        <requestFocus />
+	    </EditText>
+	    
+	    <EditText
+	        android:id="@+id/etVenue"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:singleLine="true"
+	        android:hint="Venue"
+	        android:padding="10dp"
+	        android:ems="10" />
+		
+	    <RelativeLayout
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content" >
+	    
+		     <TextView
+		        android:id="@+id/tVDate"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:text="Date:"
+		        android:paddingTop="8dp"
+		        android:paddingLeft="8dp"
+		        android:textAppearance="?android:attr/textAppearanceMedium" />
+	
+		    <EditText
+		        android:id="@+id/etDate"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:layout_alignParentTop="true"
+		        android:layout_marginLeft="23dp"
+		        android:layout_toRightOf="@+id/tVDate"
+		        android:ems="10"
+		        android:hint="YYYY-MM-DD"
+		        android:inputType="date"
+		        android:padding="10dp"
+		        android:singleLine="true" />
+		    
+		</RelativeLayout>
+	
+	    <RelativeLayout
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content" >
+	        
+	        <TextView
+	        android:id="@+id/tVDate"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text="Time: "
+	        android:paddingTop="8dp"
+	        android:paddingLeft="8dp"
+	        android:textAppearance="?android:attr/textAppearanceMedium" />
+	
+		    <EditText
+		        android:id="@+id/etTime"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:layout_alignParentTop="true"
+		        android:layout_marginLeft="16dp"
+		        android:layout_toRightOf="@+id/tVDate"
+		        android:ems="10"
+		        android:hint="HH:MM:SS"
+		        android:inputType="time"
+		        android:singleLine="true" />
+		        
+	    </RelativeLayout>
+	    
+		
+	    <TextView
+	        android:id="@+id/textView2"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text="Event details:"
+	        android:paddingTop="8dp"
+	        android:paddingLeft="8dp"
+	        android:textAppearance="?android:attr/textAppearanceMedium" />
+	    
+	    <EditText
+	        android:id="@+id/etDescription"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:ems="10"
+	        android:maxLines="3"
+	        android:inputType="textMultiLine" />
+
+	    <RelativeLayout
+	        android:layout_width="match_parent"
+	        android:layout_height="68dp" 
+	        android:paddingTop="20dp">
+
+	        <Button
+	            android:id="@+id/btCancel"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_alignParentRight="true"
+	            android:layout_alignParentTop="true"
+	            android:layout_marginRight="16dp"
+	            android:background="#BCB5E6"
+	            android:text="Cancel"
+	            android:textColor="@android:color/white" />
+
+	        <Button
+	            android:id="@+id/btSaveEdit"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_alignParentTop="true"
+	            android:layout_marginRight="14dp"
+	            android:layout_toLeftOf="@+id/btCancel"
+	            android:background="#734DFF"
+	            android:text="Save"
+	            android:textColor="@android:color/white" />
+
+	    </RelativeLayout>
+	    
+	    </LinearLayout>
+ 
+ 	</ScrollView>
+
+</LinearLayout>
+

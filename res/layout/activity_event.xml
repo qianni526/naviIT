@@ -1,0 +1,26 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_centerHorizontal="true"
+    android:layout_centerVertical="true"
+    android:orientation="vertical"
+    tools:context="com.example.login.MainActivity$PlaceholderFragment" >
+        
+        <Button
+            android:id="@+id/btAddEvent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#734DFF"
+            android:text="Create New Event"
+            android:layout_margin="5dp"
+            android:textColor="@android:color/white" />
+   
+    <ListView
+        android:id="@+id/listView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+    </ListView>
+
+</LinearLayout>
+
