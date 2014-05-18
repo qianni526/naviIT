@@ -190,9 +190,8 @@ public class EventsActivity extends Activity implements OnItemClickListener {
 			JSONParser jsonparser = new JSONParser();
 			List<NameValuePair> list = new ArrayList<NameValuePair>();
 
-			JSONObject jObject = jsonparser.makeHttpRequest(
-					"http://10.0.2.2/login/event.php", "GET", list);
-
+			//JSONObject jObject = jsonparser.makeHttpRequest("http://10.0.2.2/login/event.php", "GET", list);
+			JSONObject jObject = jsonparser.makeHttpRequest("http://naviit.webuda.com/event.php", "GET", list);
 			
 			try {
 				if (jObject.getString("status").equals("success")) {

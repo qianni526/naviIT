@@ -56,7 +56,6 @@ public class RegisterActivity extends Activity {
 				}
 			}
 
-
 		});
 		cancel = (Button) findViewById(R.id.btCancel);
 		cancel.setOnClickListener(new View.OnClickListener() {
@@ -72,7 +71,7 @@ public class RegisterActivity extends Activity {
 	public void newIntent(){
 		Intent intent = new Intent(this, LoginActivity.class);
 		startActivity(intent);
-		//finish();
+		finish();
 	}
 	
 	
@@ -97,8 +96,9 @@ public class RegisterActivity extends Activity {
 			list.add(new BasicNameValuePair("lastname",lastname.getText().toString()));
 			list.add(new BasicNameValuePair("email",email.getText().toString()));
 			list.add(new BasicNameValuePair("password",password.getText().toString()));
-			JSONObject jObject = jsonparser.makeHttpRequest("http://10.0.2.2/login/register.php", "GET", list);
-					
+			//JSONObject jObject = jsonparser.makeHttpRequest("http://10.0.2.2/login/register.php", "GET", list);
+			JSONObject jObject = jsonparser.makeHttpRequest("http://naviit.webuda.com/register.php", "GET", list);
+			
 			try {
 				Log.d("JSON", jObject.toString());
 				if(jObject.getString("status").equals("success"))

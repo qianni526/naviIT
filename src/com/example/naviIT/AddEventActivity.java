@@ -87,8 +87,9 @@ public class AddEventActivity extends Activity{
 			list.add(new BasicNameValuePair("date",date.getText().toString()));
 			list.add(new BasicNameValuePair("time",time.getText().toString()));
 			list.add(new BasicNameValuePair("description",description.getText().toString()));
-			JSONObject jObject = jsonparser.makeHttpRequest("http://10.0.2.2/login/addEvent.php", "GET", list);
-					
+			//JSONObject jObject = jsonparser.makeHttpRequest("http://10.0.2.2/login/addEvent.php", "GET", list);
+			JSONObject jObject = jsonparser.makeHttpRequest("http://naviit.webuda.com/addEvent.php", "GET", list);
+			
 			try {
 				Log.d("JSON", jObject.toString());
 				if(jObject.getString("status").equals("success"))

@@ -88,9 +88,8 @@ public class Splash extends Activity {
 			JSONParser jsonparser = new JSONParser();
 			List<NameValuePair> list = new ArrayList<NameValuePair>();
 
-			JSONObject jObject = jsonparser.makeHttpRequest(
-					"http://10.0.2.2/login/event_notify.php", "GET", list);
-
+			//JSONObject jObject = jsonparser.makeHttpRequest("http://10.0.2.2/login/event_notify.php", "GET", list);
+			JSONObject jObject = jsonparser.makeHttpRequest("http://naviit.webuda.com/event_notify.php", "GET", list);
 			
 			try {
 				if (jObject.getString("status").equals("success")) {

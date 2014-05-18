@@ -44,6 +44,7 @@ public class FragmentThree extends Fragment implements OnItemClickListener{
   	  JSONObject eventItem;
   	  AlertDialog.Builder builder;
   	  AlertDialog alert;
+  	  boolean closeEventDialogFlag = false;
       
       public FragmentThree() {
  
@@ -91,8 +92,8 @@ public class FragmentThree extends Fragment implements OnItemClickListener{
 			JSONParser jsonparser = new JSONParser();
 			List<NameValuePair> list = new ArrayList<NameValuePair>();
 
-			JSONObject jObject = jsonparser.makeHttpRequest(
-					"http://10.0.2.2/login/event.php", "GET", list);
+			//JSONObject jObject = jsonparser.makeHttpRequest("http://10.0.2.2/login/event.php", "GET", list);
+			JSONObject jObject = jsonparser.makeHttpRequest("http://naviit.webuda.com/event.php", "GET", list);
 			Log.d("JSON respond", jObject.toString());
 			
 			try {
@@ -162,7 +163,10 @@ public class FragmentThree extends Fragment implements OnItemClickListener{
   		super.onActivityResult(requestCode, resultCode, data);
   		if(requestCode == 0){
   			if(resultCode == Activity.RESULT_OK){
-  				closeEventDialog();
+  				
+  				if(closeEventDialogFlag == true){
+  					closeEventDialog();
+  				}
   				refresh();
   			}
   		}
@@ -247,7 +251,7 @@ public class FragmentThree extends Fragment implements OnItemClickListener{
 						}
 					}).create();
 			alert.show();
-		
+			closeEventDialogFlag = true;
 	}
 	
 	

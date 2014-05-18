@@ -108,7 +108,6 @@ public class MainActivity extends Activity{
 	        if (id == R.id.action_login) {
 	        	newLoginIntent();
 	        }
-
 		  
 		  // The action bar home/up action should open or close the drawer.
 	        // ActionBarDrawerToggle will take care of this.

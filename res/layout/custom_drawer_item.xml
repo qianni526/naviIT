@@ -34,9 +34,8 @@
                       android:layout_width="wrap_content"
                       android:layout_height="wrap_content"
                       android:paddingLeft="2dp"
-                      android:textColor="#1a1a1a"
+                      android:textColor="#484b5f"
                       android:textAppearance="?android:attr/textAppearanceLarge"
- 
                        />
               </LinearLayout>
  
@@ -47,7 +46,7 @@
       android:layout_marginTop="1dp"
       android:layout_marginLeft="10dp"
       android:layout_marginRight="10dp"
-      android:background="#1a1a1a"
+      android:background="#484b5f"
  
        ></View>
  

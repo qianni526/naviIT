@@ -48,8 +48,8 @@ public final class R {
         public static final int action_login=0x7f070032;
         public static final int bLogin=0x7f070013;
         public static final int btAddEvent=0x7f07000d;
-        public static final int btCancel=0x7f070009;
-        public static final int btCreateNewEvent=0x7f07000a;
+        public static final int btCancel=0x7f07000a;
+        public static final int btCreateNewEvent=0x7f070009;
         public static final int btDiscard=0x7f07000b;
         public static final int btSaveEdit=0x7f07000c;
         public static final int btSignUp=0x7f070012;

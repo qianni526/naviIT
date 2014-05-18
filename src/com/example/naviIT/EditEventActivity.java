@@ -105,8 +105,9 @@ public class EditEventActivity extends Activity{
 			JSONParser jsonparser = new JSONParser();
 			List<NameValuePair> list = new ArrayList<NameValuePair>();
 			list.add(new BasicNameValuePair("eventId", b.getString("eventId")));
-			JSONObject jObject = jsonparser.makeHttpRequest("http://10.0.2.2/login/deleteEvent.php", "GET", list);
-					
+			//JSONObject jObject = jsonparser.makeHttpRequest("http://10.0.2.2/login/deleteEvent.php", "GET", list);
+			JSONObject jObject = jsonparser.makeHttpRequest("http://naviit.webuda.com/deleteEvent.php", "GET", list);
+			
 			try {
 				Log.d("JSON", jObject.toString());
 				if(jObject.getString("status").equals("success"))
@@ -163,8 +164,9 @@ public class EditEventActivity extends Activity{
 			list.add(new BasicNameValuePair("time",time.getText().toString()));
 			list.add(new BasicNameValuePair("description",description.getText().toString()));
 			Log.d("Message", "The list passed to php is :"+list);
-			JSONObject jObject = jsonparser.makeHttpRequest("http://10.0.2.2/login/editEvent.php", "GET", list);
-					
+			//JSONObject jObject = jsonparser.makeHttpRequest("http://10.0.2.2/login/editEvent.php", "GET", list);
+			JSONObject jObject = jsonparser.makeHttpRequest("http://naviit.webuda.com/editEvent.php", "GET", list);
+			
 			try {
 				Log.d("JSON", jObject.toString());
 				if(jObject.getString("status").equals("success"))

@@ -101,8 +101,7 @@ public class LoginActivity extends Activity {
 		protected void onPreExecute() {
 			// TODO Auto-generated method stub
 			super.onPreExecute();
-			pd = ProgressDialog.show(LoginActivity.this, "", "Logging in...");
-			
+			pd = ProgressDialog.show(LoginActivity.this, "", "Logging in...");		
 		}
 		
 		@Override
@@ -112,8 +111,9 @@ public class LoginActivity extends Activity {
 			List<NameValuePair> list = new ArrayList<NameValuePair>();
 			list.add(new BasicNameValuePair("username",username.getText().toString()));
 			list.add(new BasicNameValuePair("password",password.getText().toString()));
-			JSONObject jObject = jsonparser.makeHttpRequest("http://10.0.2.2/login/login.php", "GET", list);
-					
+			//JSONObject jObject = jsonparser.makeHttpRequest("http://10.0.2.2/login/login.php", "GET", list);
+			JSONObject jObject = jsonparser.makeHttpRequest("http://naviit.webuda.com/login.php", "GET", list);	
+			
 			try {
 				Log.d("JSON", jObject.toString());
 				if(jObject.getString("status").equals("success"))
