@@ -4,5 +4,61 @@
 	<string name="drawer_open">Open drawer</string>
 	<string name="drawer_close">Close drawer</string>
 	<string name="action_login">Login</string>
+	
+	<!-- Sinyee's String -->
+	<!-- Current Location -->
+    <!-- Fragment main -->
+    <string name="curr">Current Location</string>
+    
+    <!-- QR Code Generator -->
+    <!-- Fragment_Second -->
+    <string name="editData">Enter data for QR Code at here</string>
+    <string name="btnGenerate">Generate QR Code</string>
+    <string name="qrCode">QR Code</string>
+    <string name="btnSaveQRCode">Save</string>
+    <string name="btnEmailQRCode">Email</string>
+    <string name="btnSaveQRDb">Save QR Code to Database</string>
+    
+    <!-- QR Code Scanner -->
+    <!-- Fragment_third -->
+    <string name="btnScanner">Scan QR Code</string>
+    <string name="btnShowInfo">Show info</string>
+    
+    <!-- Semantic Information -->
+    <!-- Fragment_forth -->
+    <string name="background">Background</string>
+    
+    <!-- Collect fingerprints -->
+    <!-- Fragment fifth -->
+    
+    <!-- Activity_Dialog -->
+    <string name="editLocationId">Select one location id</string>
+    <string name="btnStartScanning">Start Scanning</string>
+    
+    <!-- Check_Block_Dialog -->
+    <string name="checkA">Block A</string>
+    <string name="checkB">Block B</string>
+    
+    <!-- Fragment_Eighth -->
+    <string name="labelLName">Name of the location: </string>
+    <string name="labelLDesc">Description: </string>
+    <string name="labelLImage">Image of the location: </string>
+    <string name="btnSaveLInfo">Save</string>
+    
+    <!-- Choose block location -->
+    <string name="labelBlockName">Available location: </string>
+    <string name="btnConfirmLocation">Ok</string>
+    
+    <!-- enter_email_address -->
+    <string name="editEmailAddress">Recepient\'s email address</string>
+    <string name="btnConfirmEmail">Ok</string>
+    
+    <!-- RFMain Activity -->
+    <string name="test">Test</string>
+    <string name="count">Count: 0</string>
+    <string name="btnSaveSQ">Save in SQLite</string>
+    <string name="btnShowList">Show List</string>
+    <string name="btnExcel">Write to Excel</string>
+    <!--  End of sinyee's string -->
     
 </resources>

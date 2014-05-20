@@ -47,8 +47,8 @@
         android:layout_below="@+id/etPassword"
         android:layout_marginTop="25dp"
         android:background="#734DFF"
-        android:text="Log in"
-        android:textColor="@android:color/white" />
+        android:textColor="@android:color/white" 
+        android:text="Log in"/>
 
     <ImageView
         android:id="@+id/imageView1"

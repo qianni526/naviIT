@@ -11,108 +11,190 @@ public final class R {
     public static final class attr {
     }
     public static final class drawable {
-        public static final int arrows=0x7f020000;
-        public static final int drawer_shadow=0x7f020001;
-        public static final int floorplan_a=0x7f020002;
-        public static final int floorplan_b=0x7f020003;
-        public static final int ic_action_about=0x7f020004;
-        public static final int ic_action_camera=0x7f020005;
-        public static final int ic_action_cloud=0x7f020006;
-        public static final int ic_action_directions=0x7f020007;
-        public static final int ic_action_discard=0x7f020008;
-        public static final int ic_action_edit=0x7f020009;
-        public static final int ic_action_email=0x7f02000a;
-        public static final int ic_action_event=0x7f02000b;
-        public static final int ic_action_gamepad=0x7f02000c;
-        public static final int ic_action_good=0x7f02000d;
-        public static final int ic_action_group=0x7f02000e;
-        public static final int ic_action_help=0x7f02000f;
-        public static final int ic_action_import_export=0x7f020010;
-        public static final int ic_action_labels=0x7f020011;
-        public static final int ic_action_login=0x7f020012;
-        public static final int ic_action_logout=0x7f020013;
-        public static final int ic_action_map=0x7f020014;
-        public static final int ic_action_search=0x7f020015;
-        public static final int ic_action_settings=0x7f020016;
-        public static final int ic_action_video=0x7f020017;
-        public static final int ic_drawer=0x7f020018;
-        public static final int ic_indicator=0x7f020019;
-        public static final int ic_launcher=0x7f02001a;
-        public static final int ic_logo=0x7f02001b;
-        public static final int splash=0x7f02001c;
-        public static final int splash_background=0x7f02001d;
-        public static final int user1=0x7f02001e;
-        public static final int user2=0x7f02001f;
+        public static final int a_office=0x7f020000;
+        public static final int a_office1=0x7f020001;
+        public static final int a_office1_re=0x7f020002;
+        public static final int a_office_re=0x7f020003;
+        public static final int action_bar=0x7f020004;
+        public static final int arrows=0x7f020005;
+        public static final int background_a=0x7f020006;
+        public static final int block_a_radio_map=0x7f020007;
+        public static final int block_b=0x7f020008;
+        public static final int drawer_shadow=0x7f020009;
+        public static final int floorplan_a=0x7f02000a;
+        public static final int floorplan_b=0x7f02000b;
+        public static final int front=0x7f02000c;
+        public static final int ic_action_about=0x7f02000d;
+        public static final int ic_action_camera=0x7f02000e;
+        public static final int ic_action_cloud=0x7f02000f;
+        public static final int ic_action_directions=0x7f020010;
+        public static final int ic_action_discard=0x7f020011;
+        public static final int ic_action_edit=0x7f020012;
+        public static final int ic_action_email=0x7f020013;
+        public static final int ic_action_event=0x7f020014;
+        public static final int ic_action_gamepad=0x7f020015;
+        public static final int ic_action_good=0x7f020016;
+        public static final int ic_action_group=0x7f020017;
+        public static final int ic_action_help=0x7f020018;
+        public static final int ic_action_import_export=0x7f020019;
+        public static final int ic_action_labels=0x7f02001a;
+        public static final int ic_action_login=0x7f02001b;
+        public static final int ic_action_logout=0x7f02001c;
+        public static final int ic_action_map=0x7f02001d;
+        public static final int ic_action_search=0x7f02001e;
+        public static final int ic_action_settings=0x7f02001f;
+        public static final int ic_action_video=0x7f020020;
+        public static final int ic_drawer=0x7f020021;
+        public static final int ic_indicator=0x7f020022;
+        public static final int ic_launcher=0x7f020023;
+        public static final int ic_logo=0x7f020024;
+        public static final int images_3=0x7f020025;
+        public static final int radio_map1=0x7f020026;
+        public static final int rp=0x7f020027;
+        public static final int splash=0x7f020028;
+        public static final int splash_background=0x7f020029;
+        public static final int user1=0x7f02002a;
+        public static final int user2=0x7f02002b;
     }
     public static final class id {
-        public static final int action_login=0x7f070032;
-        public static final int bLogin=0x7f070013;
-        public static final int btAddEvent=0x7f07000d;
+        public static final int action_login=0x7f07006a;
+        public static final int bLogin=0x7f07001d;
+        public static final int bigImage=0x7f07000f;
+        public static final int bk1Marker=0x7f07005f;
+        public static final int bk3Marker=0x7f070060;
+        public static final int btAddEvent=0x7f070017;
         public static final int btCancel=0x7f07000a;
         public static final int btCreateNewEvent=0x7f070009;
-        public static final int btDiscard=0x7f07000b;
-        public static final int btSaveEdit=0x7f07000c;
-        public static final int btSignUp=0x7f070012;
-        public static final int btSignup=0x7f07001c;
-        public static final int button1=0x7f070028;
-        public static final int button2=0x7f070026;
-        public static final int content_frame=0x7f070015;
-        public static final int drawer_icon=0x7f07001e;
-        public static final int drawer_itemName=0x7f07001f;
-        public static final int drawer_layout=0x7f070014;
-        public static final int editButton1=0x7f070024;
-        public static final int editText1=0x7f070029;
+        public static final int btDiscard=0x7f070015;
+        public static final int btSaveEdit=0x7f070016;
+        public static final int btSignUp=0x7f07001c;
+        public static final int btSignup=0x7f070026;
+        public static final int btnClose=0x7f070063;
+        public static final int btnConfirmEmail=0x7f07003b;
+        public static final int btnConfirmLocation=0x7f070030;
+        public static final int btnEmailQRCode=0x7f070058;
+        public static final int btnGenerate=0x7f070054;
+        public static final int btnNext=0x7f070043;
+        public static final int btnPrev=0x7f070044;
+        public static final int btnSaveLInfo=0x7f070041;
+        public static final int btnSaveQRCode=0x7f070056;
+        public static final int btnSaveQRDb=0x7f070057;
+        public static final int btnScanner=0x7f070059;
+        public static final int btnShowInfo=0x7f07005b;
+        public static final int btnStartScanning=0x7f07000d;
+        public static final int btnStaticNext=0x7f070013;
+        public static final int btnStaticPrev=0x7f070014;
+        public static final int button1=0x7f07004b;
+        public static final int button2=0x7f070049;
+        public static final int checkA=0x7f07002b;
+        public static final int checkB=0x7f07002c;
+        public static final int content_frame=0x7f07001f;
+        public static final int count=0x7f07002a;
+        public static final int drawer_icon=0x7f070033;
+        public static final int drawer_itemName=0x7f070034;
+        public static final int drawer_layout=0x7f07001e;
+        public static final int editBlockName=0x7f07002e;
+        public static final int editButton1=0x7f070039;
+        public static final int editData=0x7f070053;
+        public static final int editEmailAddress=0x7f07003a;
+        public static final int editLDesc=0x7f07003f;
+        public static final int editLImage=0x7f070042;
+        public static final int editLName=0x7f07003d;
+        public static final int editLocationId=0x7f07000b;
+        public static final int editText1=0x7f07004c;
         public static final int etDate=0x7f070005;
         public static final int etDescription=0x7f070008;
-        public static final int etEmail=0x7f07001b;
-        public static final int etFirstname=0x7f070019;
-        public static final int etLastname=0x7f07001a;
-        public static final int etPassword=0x7f070011;
+        public static final int etEmail=0x7f070025;
+        public static final int etFirstname=0x7f070023;
+        public static final int etLastname=0x7f070024;
+        public static final int etPassword=0x7f07001b;
         public static final int etTime=0x7f070006;
         public static final int etTitle=0x7f070002;
-        public static final int etUsername=0x7f07000f;
+        public static final int etUsername=0x7f070019;
         public static final int etVenue=0x7f070003;
-        public static final int iVfloorplan=0x7f070025;
-        public static final int imageView1=0x7f070010;
-        public static final int imageView2=0x7f070027;
-        public static final int imageView3=0x7f07002e;
-        public static final int imageView4=0x7f07002f;
-        public static final int itemLayout=0x7f07001d;
-        public static final int left_drawer=0x7f070016;
-        public static final int linearLayout1=0x7f070017;
-        public static final int listView1=0x7f07000e;
-        public static final int my_relative_layout=0x7f07002b;
+        public static final int foyerMarker=0x7f07005e;
+        public static final int iVfloorplan=0x7f070048;
+        public static final int imageView1=0x7f07001a;
+        public static final int imageView2=0x7f07004a;
+        public static final int imageView3=0x7f070051;
+        public static final int imageView4=0x7f070052;
+        public static final int imgDisplay=0x7f070062;
+        public static final int imgDisplay1=0x7f070067;
+        public static final int itemLayout=0x7f070032;
+        public static final int labelBlockName=0x7f07002d;
+        public static final int labelLDesc=0x7f07003e;
+        public static final int labelLImage=0x7f070040;
+        public static final int labelLName=0x7f07003c;
+        public static final int labelLocationDescription=0x7f070011;
+        public static final int labelLocationImage=0x7f070012;
+        public static final int labelLocationName=0x7f070010;
+        public static final int left_drawer=0x7f070020;
+        public static final int linearLayout1=0x7f070021;
+        public static final int listView1=0x7f070018;
+        public static final int my_relative_layout=0x7f07004e;
+        public static final int officeMarker=0x7f07005d;
+        public static final int pager=0x7f070064;
+        public static final int progressBarInfo=0x7f070031;
+        public static final int progressBarScanning=0x7f07000e;
+        public static final int qrCode=0x7f070055;
+        public static final int qrImage=0x7f07005c;
+        public static final int radio_map_a=0x7f070047;
+        public static final int result1=0x7f070027;
+        public static final int result2=0x7f070028;
+        public static final int result3=0x7f070029;
+        public static final int scanResult=0x7f07005a;
         public static final int scrollView1=0x7f070001;
-        public static final int searchView1=0x7f07002a;
-        public static final int spinner1=0x7f07002d;
+        public static final int searchView1=0x7f07004d;
+        public static final int sleMarker=0x7f070061;
+        public static final int spinner1=0x7f070050;
+        public static final int spinnerBlockName=0x7f07002f;
+        public static final int spinnerLocationId=0x7f07000c;
+        public static final int staticX=0x7f070068;
+        public static final int staticY=0x7f070069;
         public static final int tVDate=0x7f070004;
         public static final int textView1=0x7f070000;
         public static final int textView2=0x7f070007;
-        public static final int textView3=0x7f070030;
-        public static final int textView4=0x7f070031;
-        public static final int tvDate=0x7f070021;
-        public static final int tvDescription=0x7f070023;
-        public static final int tvSignup=0x7f070018;
-        public static final int tvTime=0x7f070022;
-        public static final int tvVenue=0x7f070020;
-        public static final int zoomControls1=0x7f07002c;
+        public static final int textView3=0x7f070065;
+        public static final int textView4=0x7f070066;
+        public static final int tvDate=0x7f070036;
+        public static final int tvDescription=0x7f070038;
+        public static final int tvSignup=0x7f070022;
+        public static final int tvTime=0x7f070037;
+        public static final int tvVenue=0x7f070035;
+        public static final int x=0x7f070045;
+        public static final int y=0x7f070046;
+        public static final int zoomControls1=0x7f07004f;
     }
     public static final class layout {
         public static final int activity_addevent=0x7f030000;
-        public static final int activity_editevent=0x7f030001;
-        public static final int activity_event=0x7f030002;
-        public static final int activity_login=0x7f030003;
-        public static final int activity_main=0x7f030004;
-        public static final int activity_register=0x7f030005;
-        public static final int custom_drawer_item=0x7f030006;
-        public static final int dialog_event=0x7f030007;
-        public static final int fragment_layout_five=0x7f030008;
-        public static final int fragment_layout_four=0x7f030009;
-        public static final int fragment_layout_one=0x7f03000a;
-        public static final int fragment_layout_three=0x7f03000b;
-        public static final int fragment_layout_two=0x7f03000c;
-        public static final int row=0x7f03000d;
-        public static final int splash=0x7f03000e;
+        public static final int activity_dialog=0x7f030001;
+        public static final int activity_dialog_image=0x7f030002;
+        public static final int activity_dialog_location=0x7f030003;
+        public static final int activity_editevent=0x7f030004;
+        public static final int activity_event=0x7f030005;
+        public static final int activity_login=0x7f030006;
+        public static final int activity_main=0x7f030007;
+        public static final int activity_register=0x7f030008;
+        public static final int activity_rfmain=0x7f030009;
+        public static final int choose_box_dialog=0x7f03000a;
+        public static final int choose_location_dialog=0x7f03000b;
+        public static final int custom_drawer_item=0x7f03000c;
+        public static final int dialog_event=0x7f03000d;
+        public static final int enter_email_address=0x7f03000e;
+        public static final int fragment_eighth=0x7f03000f;
+        public static final int fragment_fifth=0x7f030010;
+        public static final int fragment_layout_five=0x7f030011;
+        public static final int fragment_layout_four=0x7f030012;
+        public static final int fragment_layout_one=0x7f030013;
+        public static final int fragment_layout_three=0x7f030014;
+        public static final int fragment_layout_two=0x7f030015;
+        public static final int fragment_second=0x7f030016;
+        public static final int fragment_third=0x7f030017;
+        public static final int full_image=0x7f030018;
+        public static final int fullscreen_pager=0x7f030019;
+        public static final int row=0x7f03001a;
+        public static final int splash=0x7f03001b;
+        public static final int test_image=0x7f03001c;
     }
     public static final class menu {
         public static final int main=0x7f060000;
@@ -120,8 +202,62 @@ public final class R {
     public static final class string {
         public static final int action_login=0x7f040003;
         public static final int app_name=0x7f040000;
+        /**  Semantic Information 
+ Fragment_forth 
+         */
+        public static final int background=0x7f04000d;
+        public static final int btnConfirmEmail=0x7f040019;
+        public static final int btnConfirmLocation=0x7f040017;
+        public static final int btnEmailQRCode=0x7f040009;
+        public static final int btnExcel=0x7f04001e;
+        public static final int btnGenerate=0x7f040006;
+        public static final int btnSaveLInfo=0x7f040015;
+        public static final int btnSaveQRCode=0x7f040008;
+        public static final int btnSaveQRDb=0x7f04000a;
+        public static final int btnSaveSQ=0x7f04001c;
+        /**  QR Code Scanner 
+ Fragment_third 
+         */
+        public static final int btnScanner=0x7f04000b;
+        public static final int btnShowInfo=0x7f04000c;
+        public static final int btnShowList=0x7f04001d;
+        public static final int btnStartScanning=0x7f04000f;
+        /**  Check_Block_Dialog 
+         */
+        public static final int checkA=0x7f040010;
+        public static final int checkB=0x7f040011;
+        public static final int count=0x7f04001b;
+        /**  Sinyee's String 
+ Current Location 
+ Fragment main 
+         */
+        public static final int curr=0x7f040004;
         public static final int drawer_close=0x7f040002;
         public static final int drawer_open=0x7f040001;
+        /**  QR Code Generator 
+ Fragment_Second 
+         */
+        public static final int editData=0x7f040005;
+        /**  enter_email_address 
+         */
+        public static final int editEmailAddress=0x7f040018;
+        /**  Collect fingerprints 
+ Fragment fifth 
+ Activity_Dialog 
+         */
+        public static final int editLocationId=0x7f04000e;
+        /**  Choose block location 
+         */
+        public static final int labelBlockName=0x7f040016;
+        public static final int labelLDesc=0x7f040013;
+        public static final int labelLImage=0x7f040014;
+        /**  Fragment_Eighth 
+         */
+        public static final int labelLName=0x7f040012;
+        public static final int qrCode=0x7f040007;
+        /**  RFMain Activity 
+         */
+        public static final int test=0x7f04001a;
     }
     public static final class style {
         /** 

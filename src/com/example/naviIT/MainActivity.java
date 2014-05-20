@@ -48,12 +48,28 @@ public class MainActivity extends Activity{
             mDrawerLayout.setDrawerShadow(R.drawable.drawer_shadow,
                         GravityCompat.START);
             
-         // Add Drawer Item to dataList
+        // Add Drawer Item to dataList
         dataList.add(new DrawerItem("Map", R.drawable.ic_action_directions));
-        dataList.add(new DrawerItem("Building Overview", R.drawable.ic_action_map));
+        
+        //sinyee add QR code scanner - FragmentQRscanner.java -done
+        dataList.add(new DrawerItem("QR code scanner", R.drawable.ic_action_camera));
+        
+        //sinyee add Building overview (info plan)- FragmentTwo.java is building overview -done
+        dataList.add(new DrawerItem("Building Overview", R.drawable.ic_action_search));
+        
+        //sinyee add floor plan - FragmentFloorPlan.java - done
+        dataList.add(new DrawerItem("Floor plan", R.drawable.ic_action_map));
         dataList.add(new DrawerItem("Events", R.drawable.ic_action_event));
-        dataList.add(new DrawerItem("Scan QR code", R.drawable.ic_action_labels));
         dataList.add(new DrawerItem("Friends Map", R.drawable.ic_action_group));
+        
+        //sinyee add Fingerprint collector - FragmentFingerprint.java - done
+        dataList.add(new DrawerItem("Fingerprint collector", R.drawable.ic_action_labels));
+        
+        //sinyee add QR code generator - FragmentQRgenerator.java - done
+        dataList.add(new DrawerItem("QR code generator", R.drawable.ic_action_import_export));
+        
+        //sinyee add building overview setting - FragmentSetting.java - done
+        dataList.add(new DrawerItem("Building Overview Setting", R.drawable.ic_action_settings));
         dataList.add(new DrawerItem("Log Out", R.drawable.ic_action_logout));
        
 	            adapter = new CustomDrawerAdapter(this, R.layout.custom_drawer_item,
@@ -156,36 +172,64 @@ public class MainActivity extends Activity{
                                 .getImgResID());
                     break;
               case 1:
+                  fragment = new FragmentQRscanner();
+                  args.putString(FragmentQRscanner.ITEM_NAME, dataList.get(possition)
+                              .getItemName());
+                  args.putInt(FragmentQRscanner.IMAGE_RESOURCE_ID, dataList.get(possition)
+                              .getImgResID());
+                  break;
+              case 2:
                     fragment = new FragmentTwo();
                     args.putString(FragmentTwo.ITEM_NAME, dataList.get(possition)
                                 .getItemName());
                     args.putInt(FragmentTwo.IMAGE_RESOURCE_ID, dataList.get(possition)
                                 .getImgResID());
                     break;
-              case 2:
-                    fragment = new FragmentThree();
-                    args.putString(FragmentThree.ITEM_NAME, dataList.get(possition)
-                                .getItemName());
-                    args.putInt(FragmentThree.IMAGE_RESOURCE_ID, dataList.get(possition)
-                                .getImgResID());
-                    break;
               case 3:
-            	  //Scan QR code
-            	  fragment = new FragmentFour();
-            	  args.putString(FragmentFour.ITEM_NAME, dataList.get(possition)
-                          .getItemName());
-            	  args.putInt(FragmentFour.IMAGE_RESOURCE_ID, dataList.get(possition)
-                          .getImgResID());
+                  fragment = new FragmentFloorPlan();
+                  args.putString(FragmentFloorPlan.ITEM_NAME, dataList.get(possition)
+                              .getItemName());
+                  args.putInt(FragmentFloorPlan.IMAGE_RESOURCE_ID, dataList.get(possition)
+                              .getImgResID());
                   break;
               case 4:
-            	  //Friends Map
-            	  fragment = new FragmentFive();
-            	  args.putString(FragmentFive.ITEM_NAME, dataList.get(possition)
+                  fragment = new FragmentThree();
+                  args.putString(FragmentThree.ITEM_NAME, dataList.get(possition)
+                              .getItemName());
+                  args.putInt(FragmentThree.IMAGE_RESOURCE_ID, dataList.get(possition)
+                              .getImgResID());
+                  break; 
+              case 5:
+                  fragment = new FragmentFive();
+                  args.putString(FragmentFive.ITEM_NAME, dataList.get(possition)
+                              .getItemName());
+                  args.putInt(FragmentFive.IMAGE_RESOURCE_ID, dataList.get(possition)
+                              .getImgResID());
+                  break;     
+              case 6:
+                    fragment = new FragmentFingerprint();
+                    args.putString(FragmentFingerprint.ITEM_NAME, dataList.get(possition)
+                                .getItemName());
+                    args.putInt(FragmentFingerprint.IMAGE_RESOURCE_ID, dataList.get(possition)
+                                .getImgResID());
+                    break;
+              case 7:
+            	  //Scan QR code
+            	  fragment = new FragmentQRgenerator();
+            	  args.putString(FragmentQRgenerator.ITEM_NAME, dataList.get(possition)
                           .getItemName());
-              args.putInt(FragmentFive.IMAGE_RESOURCE_ID, dataList.get(possition)
+            	  args.putInt(FragmentQRgenerator.IMAGE_RESOURCE_ID, dataList.get(possition)
+                          .getImgResID());
+                  break;
+              case 8:
+            	  //Friends Map
+            	  fragment = new FragmentSetting();
+            	  args.putString(FragmentSetting.ITEM_NAME, dataList.get(possition)
+                          .getItemName());
+              args.putInt(FragmentSetting.IMAGE_RESOURCE_ID, dataList.get(possition)
                           .getImgResID());
                   break;   
-              case 5:
+              case 9:
                     newLoginIntent();
                     finish();
                     return;
