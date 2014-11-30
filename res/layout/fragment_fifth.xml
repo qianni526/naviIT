@@ -1,0 +1,43 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+   android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="10dp"
+    tools:context="com.sinyee.navigatortesterv4.MainActivity$PlaceholderFragment" >
+    
+  <!--  <TextView
+       android:id="@+id/x"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"/>
+   
+   <TextView
+       android:id="@+id/y"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_below="@+id/x"/> -->
+       
+       <Button 
+           android:id="@+id/btnSelectZone"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+            android:background="#734DFF"
+        android:textColor="@android:color/white"
+        android:layout_margin="10dp"
+        android:padding="10dp"
+             android:text="Select zone"/>
+   
+   <ImageView
+        android:id="@+id/radio_map_a"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/btnSelectZone"
+        android:background="@drawable/a_1"
+        android:contentDescription="front" />
+   
+    
+  	</RelativeLayout>
+  	
+

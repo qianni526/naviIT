@@ -1,0 +1,56 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    android:background="#fff">
+    
+    <TextView
+        android:id="@+id/labelLocationName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+       />
+    
+    <TextView
+        android:id="@+id/labelLocationDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/labelLocationName"/>
+
+    <!-- <ProgressBar
+        android:id="@+id/progressBar1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/labelLocationImage"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="34dp" /> -->
+
+    <ImageView
+        android:id="@+id/labelLocationImage"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_below="@+id/labelLocationDescription"
+        android:layout_centerHorizontal="true"
+        android:background="#ccc"
+        android:contentDescription="image" />
+
+    <ImageButton
+        android:id="@+id/btnStaticNext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/btnStaticPrev"
+        android:layout_marginLeft="14dp"
+        android:layout_toRightOf="@+id/labelLocationImage"
+        android:src="@android:drawable/ic_media_next" />
+
+    <ImageButton
+        android:id="@+id/btnStaticPrev"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/labelLocationImage"
+        android:layout_alignLeft="@+id/labelLocationDescription"
+        android:layout_marginBottom="50dp"
+        android:src="@android:drawable/ic_media_previous" />
+    
+</RelativeLayout>
+

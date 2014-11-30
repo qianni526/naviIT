@@ -1,0 +1,114 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.sinyee.navigatortesterv4.MainActivity$PlaceholderFragment"
+    android:padding="10dp" >
+    
+   <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center" >
+    
+
+    <TextView
+        android:id="@+id/labelLName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/labelLName"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#8066FF"
+            />
+    
+    <EditText 
+        android:id="@+id/editLName"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/labelLName"
+         android:gravity="top|left"
+        android:singleLine="false"
+        android:inputType="textMultiLine"/>
+
+    <TextView
+        android:id="@+id/labelLDesc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/editLName"
+        android:layout_below="@+id/editLName"
+        android:layout_marginTop="40dp"
+        android:text="@string/labelLDesc"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#8066FF"
+             />
+    
+    <EditText 
+        android:id="@+id/editLDesc"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/labelLDesc"
+        android:gravity="top|left"
+        android:singleLine="false"
+        android:inputType="textMultiLine"/>
+    
+    <TextView
+        android:id="@+id/labelLImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editLDesc"
+        android:layout_marginTop="40dp"/>
+        <!--  android:text="@string/labelLImage"-->
+    
+    <Button 
+        android:id="@+id/btnSaveLInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editLImage"
+        android:layout_marginTop="40dp"
+        android:text="@string/btnSaveLInfo"
+         android:background="#734DFF"
+        android:textColor="@android:color/white"
+        android:padding="10dp"/>
+    
+    <!-- <Button 
+        android:id="@+id/btnUploadNewImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnSaveLInfo"
+        android:layout_marginTop="40dp"
+        android:text="Upload New Image"
+         android:background="#734DFF"
+        android:textColor="@android:color/white"
+        android:padding="10dp"/> --> 
+
+    <ImageButton
+        android:id="@+id/btnNext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/btnPrev"
+        android:src="@android:drawable/ic_media_next" />
+
+    <ImageView
+        android:id="@+id/editLImage"
+        android:layout_width="170dp"
+        android:layout_height="170dp"
+        android:layout_alignTop="@+id/labelLImage"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="14dp"
+        android:background="#ccc"
+        android:contentDescription="lImage" />
+
+    <ImageButton
+        android:id="@+id/btnPrev"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/editLImage"
+        android:layout_alignParentLeft="true"
+        android:layout_marginBottom="47dp"
+        android:src="@android:drawable/ic_media_previous" />
+
+    
+    
+</RelativeLayout>
+</ScrollView>
+

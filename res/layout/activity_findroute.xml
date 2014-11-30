@@ -1,0 +1,185 @@
+<LinearLayout
+    android:id="@+id/layout"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:gesture-image="http://schemas.polites.com/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:visibility="invisible"
+    android:background="@color/map_background">
+
+     <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true" >
+
+         <LinearLayout
+	       
+		    android:orientation="vertical"
+		    android:layout_width="match_parent"
+		    android:layout_height="match_parent">
+	    
+		     <LinearLayout
+		        android:id="@+id/layout1"
+			    android:orientation="horizontal"
+			    android:layout_width="fill_parent"
+			    android:layout_height="wrap_content"
+			    android:layout_marginLeft="10dp"
+			    android:paddingTop="10dp"
+			    android:paddingRight="10dp">
+		    
+			    <TextView
+			        android:id="@+id/tvYouAreAt"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:textColor="@android:color/holo_purple"
+			        android:textSize="15dp"
+			        android:text="You are at:" />
+			    
+		    </LinearLayout>
+		    
+		    <LinearLayout
+		        android:id="@+id/layout2"
+			    android:orientation="horizontal"
+			    android:layout_width="fill_parent"
+			    android:layout_height="wrap_content"
+			    android:layout_marginLeft="10dp"
+			    android:paddingTop="10dp"
+			    android:weightSum="3">
+		    
+			    <Spinner
+			        android:id="@+id/spinnerBlock"
+			        android:layout_width="0dp"
+			        android:layout_height="wrap_content"
+			        android:layout_weight="1" />
+			
+			    <Spinner
+			        android:id="@+id/spinnerLevel"
+			        android:layout_width="0dp"
+			        android:layout_height="wrap_content"
+			        android:layout_weight="1.5" />
+			    
+			    
+		    </LinearLayout>
+			    
+		   <LinearLayout
+		        android:id="@+id/layout3"
+			    android:orientation="horizontal"
+			    android:layout_width="fill_parent"
+			    android:layout_height="wrap_content"
+			    android:layout_marginLeft="10dp"
+			    android:paddingTop="10dp"
+			    android:paddingRight="10dp">
+		       
+			    <Spinner
+			        android:id="@+id/spinnerRoom"
+			        android:layout_height="wrap_content"
+			        android:layout_width="match_parent" />
+			    
+		    </LinearLayout>
+		
+		    <LinearLayout
+		        android:id="@+id/layout4"
+			    android:orientation="horizontal"
+			    android:layout_width="fill_parent"
+			    android:layout_height="wrap_content"
+			    android:layout_marginLeft="10dp"
+			    android:gravity="center"
+			    android:paddingRight="10dp">
+		       
+			    <Button
+			        android:id="@+id/btScanQRcode"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        style="?android:attr/borderlessButtonStyle"
+			        android:textColor="@android:color/holo_purple"
+			        android:textSize="15dp"
+			        android:text="Scan QR code for location" />
+			    
+		    </LinearLayout>
+		   
+		   <LinearLayout
+		        android:id="@+id/belowlayout1"
+			    android:orientation="horizontal"
+			    android:layout_width="fill_parent"
+			    android:layout_height="wrap_content"
+			    android:layout_marginLeft="10dp"
+			    android:paddingTop="15dp"
+			    android:paddingRight="10dp">
+		    
+			    <TextView
+			        android:id="@+id/tvDestination"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:textColor="@android:color/holo_purple"
+			        android:textSize="15dp"
+			        android:text="Destination:" />
+			    
+		    </LinearLayout>
+		    
+		    <LinearLayout
+		        android:id="@+id/belowlayout2"
+			    android:orientation="horizontal"
+			    android:layout_width="fill_parent"
+			    android:layout_height="wrap_content"
+			    android:layout_marginLeft="10dp"
+			    android:paddingTop="10dp"
+			    android:weightSum="3">
+		    
+			    <Spinner
+			        android:id="@+id/destspinnerBlock"
+			        android:layout_width="0dp"
+			        android:layout_height="wrap_content"
+			        android:layout_weight="1" />
+			
+			    <Spinner
+			        android:id="@+id/destspinnerLevel"
+			        android:layout_width="0dp"
+			        android:layout_height="wrap_content"
+			        android:layout_weight="1.5" />
+			    
+			    
+		    </LinearLayout>
+			    
+		   <LinearLayout
+		        android:id="@+id/belowlayout3"
+			    android:orientation="horizontal"
+			    android:layout_width="fill_parent"
+			    android:layout_height="wrap_content"
+			    android:layout_marginLeft="10dp"
+			    android:paddingTop="10dp"
+			    android:paddingRight="10dp">
+		       
+			    <Spinner
+			        android:id="@+id/destspinnerRoom"
+			        android:layout_height="wrap_content"
+			        android:layout_width="match_parent" />
+			    
+		    </LinearLayout>
+		
+		    <LinearLayout
+		        android:id="@+id/belowlayout4"
+			    android:orientation="horizontal"
+			    android:layout_width="fill_parent"
+			    android:layout_height="wrap_content"
+			    android:layout_marginLeft="10dp"
+			    android:gravity="center"
+			    android:paddingTop="30dp"
+			    android:paddingRight="10dp">
+		       
+			    <Button
+			        android:id="@+id/btNavigate"
+			        android:layout_width="match_parent"
+			        android:layout_height="wrap_content"
+			        android:background="#734DFF"
+		        	android:textColor="@android:color/white" 
+			        android:text="Navigate" />
+			    
+		    </LinearLayout>
+    	</LinearLayout>
+    
+    </ScrollView>
+    
+</LinearLayout>

@@ -1,0 +1,40 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff"
+    android:padding="10dp">
+    
+    <EditText 
+        android:id="@+id/editLocationId"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:hint="@string/editLocationId"
+        android:inputType="text"/>
+    
+    <Spinner 
+        android:id="@+id/spinnerLocationId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editLocationId"/>
+    
+    <Button
+        android:id="@+id/btnStartScanning"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/spinnerLocationId"
+        android:text="@string/btnStartScanning"
+         android:background="#734DFF"
+        android:textColor="@android:color/white"
+        android:padding="10dp"/>
+
+    <ProgressBar
+        android:id="@+id/progressBarScanning"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/btnStartScanning"
+        android:layout_below="@+id/btnStartScanning"
+        android:layout_marginTop="16dp" />
+    
+</RelativeLayout>
+

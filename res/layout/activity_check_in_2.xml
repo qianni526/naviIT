@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    
+    <TextView
+        android:id="@+id/labelCheckIn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Check in: "
+        android:padding="10dp"/>
+    
+    <EditText
+        android:id="@+id/editCheckIn"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/labelCheckIn"
+        android:inputType="text"/>
+    
+    <Spinner 
+        android:id="@+id/spinnerCheckIn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editCheckIn"/>
+    
+    <Button 
+        android:id="@+id/btnDone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/spinnerCheckIn"
+        android:text="Done"
+        android:padding="10dp"
+        android:background="#734DFF"
+        android:textColor="@android:color/white"
+        android:layout_marginLeft="10dp" />
+    
+    
+
+</RelativeLayout>

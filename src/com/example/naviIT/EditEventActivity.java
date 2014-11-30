@@ -18,6 +18,7 @@ import com.example.naviIT.AddEventActivity.connectDBtonotify;
 
 import android.app.Activity;
 import android.app.AlarmManager;
+import android.app.DatePickerDialog;
 import android.app.Fragment;
 import android.app.FragmentTransaction;
 import android.app.PendingIntent;
@@ -32,8 +33,11 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.TextView;
+import android.widget.TimePicker;
 import android.widget.Toast;
 
 public class EditEventActivity extends Activity{
@@ -46,11 +50,14 @@ public class EditEventActivity extends Activity{
 	JSONArray jArray;
 	JSONObject eventItem;
 	
-	EditText title, venue, date, time, description;
+	EditText title, venue, description;
+	TextView date;
+	TimePicker time;
 	Button save, cancel;
-	ImageButton discard;
+	ImageButton chgDate, discard;
 	ProgressDialog pd = null;
 	Bundle b;
+	private int mYear, mMonth, mDay;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -62,17 +69,47 @@ public class EditEventActivity extends Activity{
 		
 		title = (EditText) findViewById(R.id.etTitle);
 		venue = (EditText) findViewById(R.id.etVenue);
-		date = (EditText) findViewById(R.id.etDate);
-		time = (EditText) findViewById(R.id.etTime);
+		date = (TextView) findViewById(R.id.textDate);
+		time = (TimePicker) findViewById(R.id.timePicker1);
 		description = (EditText) findViewById(R.id.etDescription);
 		
 		//set editText with existing info
 		title.setText(b.getString("title"));
 		venue.setText(b.getString("venue"));
 		date.setText(b.getString("date"));
-		time.setText(b.getString("time"));
-		description.setText(b.getString("description"));
+		time.setCurrentHour(Integer.parseInt(b.getString("hour")));
+		time.setCurrentMinute(Integer.parseInt(b.getString("minute")));
+;		description.setText(b.getString("description"));
 		
+		chgDate = (ImageButton) findViewById(R.id.btChgDate);
+		chgDate.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+
+				String input = b.getString("date");
+				String[] out = input.split("-");			
+				
+				mYear = Integer.parseInt(out[0]);
+				mMonth = Integer.parseInt(out[1])-1;
+				mDay = Integer.parseInt(out[2]);
+				 
+				//launch datepicker dialog
+				DatePickerDialog dpd = new DatePickerDialog(EditEventActivity.this, new DatePickerDialog.OnDateSetListener() {
+				 
+				            @Override
+				            public void onDateSet(DatePicker view, int year,
+				                    int monthOfYear, int dayOfMonth) {
+				            	date.setText(year + "-"
+				                        + (monthOfYear + 1) + "-" + dayOfMonth);
+				 
+				            }
+
+				        }, mYear, mMonth, mDay);
+				dpd.show();
+			}
+		});
+
 		discard = (ImageButton) findViewById(R.id.btDiscard);
 		discard.setOnClickListener(new View.OnClickListener() {
 			
@@ -203,7 +240,8 @@ public class EditEventActivity extends Activity{
 			list.add(new BasicNameValuePair("title",title.getText().toString()));
 			list.add(new BasicNameValuePair("venue",venue.getText().toString()));
 			list.add(new BasicNameValuePair("date",date.getText().toString()));
-			list.add(new BasicNameValuePair("time",time.getText().toString()));
+			list.add(new BasicNameValuePair("hour",time.getCurrentHour().toString()));
+			list.add(new BasicNameValuePair("minute",time.getCurrentMinute().toString()));
 			list.add(new BasicNameValuePair("description",description.getText().toString()));
 			Log.d("Message", "The list passed to php is :"+list);
 			//JSONObject jObject = jsonparser.makeHttpRequest("http://10.0.2.2/login/editEvent.php", "GET", list);
@@ -228,8 +266,7 @@ public class EditEventActivity extends Activity{
 			
 			if (EditEventActivity.this.pd != null) {
                 EditEventActivity.this.pd.dismiss();
-			}
-			
+			}			
 			if(editEventFlag==true)
 			{
 				Toast.makeText(getApplicationContext(), "Changes saved.", Toast.LENGTH_SHORT).show();
@@ -237,16 +274,15 @@ public class EditEventActivity extends Activity{
 				finish();
 			}	
 			else{
+				Toast.makeText(getApplicationContext(), "Fail to edit event. Please try again.", Toast.LENGTH_SHORT).show();
 				Log.d("Message", "Fail to edit event");
 			}
 			
 			connectDBtonotify connect = new connectDBtonotify();
 			connect.execute();
-		}
-		
-		
+		}	
 	}
-	
+
 	class connectDBtonotify extends AsyncTask<Void, Void, Void> {
 
 		@Override
@@ -273,7 +309,8 @@ public class EditEventActivity extends Activity{
 								eventItem.getString("title"), eventItem
 										.getString("venue"), eventItem
 										.getString("date"), eventItem
-										.getString("time"), eventItem
+										.getString("hour"), eventItem
+										.getString("minute"), eventItem
 										.getString("description")));
 					}
 				}
@@ -297,10 +334,8 @@ public class EditEventActivity extends Activity{
 			}
 			else{	
 			
-				for(i=0; i<events.size();i++){
-				
-					scheduleNotification(i);
-					
+				for(i=0; i<events.size();i++){				
+					scheduleNotification(i);				
 				}
 			}
 
@@ -316,8 +351,8 @@ public class EditEventActivity extends Activity{
 			Calendar eventtime = Calendar.getInstance();
 			
 			try {			
-				String datetime = events.get(i).getDate() + " " + events.get(i).getTime();
-				SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+				String datetime = events.get(i).getDate() + " " + events.get(i).getHour()+":"+events.get(i).getMinute();
+				SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm");
 				date = simpleDateFormat.parse(datetime);
 				//Log.d("date", date.toString());
 				eventtime.setTime(date);
@@ -352,7 +387,8 @@ public class EditEventActivity extends Activity{
 				c.putString("title", events.get(i).getTitle());
 				c.putString("venue", events.get(i).getVenue());
 				c.putString("date", events.get(i).getDate());
-				c.putString("time", events.get(i).getTime());
+				c.putString("hour", events.get(i).getHour());
+				c.putString("minute", events.get(i).getMinute());
 				c.putString("description", events.get(i).getDescription());		
 				j.putExtras(c);
 				PendingIntent pint = PendingIntent.getService(getApplicationContext(), i, j, 0);
@@ -379,6 +415,8 @@ public class EditEventActivity extends Activity{
 		}
 
 	}
-
-
 }
+	
+
+
+

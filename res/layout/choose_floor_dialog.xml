@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    
+   <CheckBox
+       android:id="@+id/radioGround"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:text="Ground floor"
+       android:checked="false"/>
+   
+    <CheckBox
+       android:id="@+id/radioFirst"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_below="@+id/radioGround"
+       android:text="First floor"
+        android:checked="false"/>
+    
+     <CheckBox
+       android:id="@+id/radioSecond"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_below="@+id/radioFirst"
+       android:text="Second floor"
+        android:checked="false"/>
+    
+    
+
+</RelativeLayout>
+

@@ -6,7 +6,21 @@
         android:showAsAction="always"
         android:icon="@drawable/ic_action_login"
         android:title="@string/action_login"/>
-
-
+    
+    <item
+        android:id="@+id/action_refresh"
+        android:orderInCategory="100"
+        android:showAsAction="always"
+        android:icon="@drawable/ic_action_refresh"
+        android:title="action_refresh"
+        android:visible="false"/>
+    
+    <item
+        android:id="@+id/action_add_person"
+        android:orderInCategory="100"
+        android:showAsAction="always"
+        android:icon="@drawable/ic_action_add_person"
+        android:title="action_add_person"
+        android:visible="false"/>
     
 </menu>

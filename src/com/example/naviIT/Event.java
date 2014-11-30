@@ -6,16 +6,18 @@ public class Event {
 	private String title;
 	private String venue;
 	private String date;
-	private String time;
+	private String hour;
+	private String minute;
 	private String description;
 	
-	public Event(String eventId, String title, String venue, String date, String time, String description) {
+	public Event(String eventId, String title, String venue, String date, String hour, String minute, String description) {
 		super();
 		this.eventId = eventId;
 		this.title = title;
 		this.venue = venue;
 		this.date = date;
-		this.time = time;
+		this.hour = hour;
+		this.minute = minute;	
 		this.description = description;
 	}
 
@@ -35,8 +37,12 @@ public class Event {
 		return date;
 	}
 	
-	public String getTime() {
-		return time;
+	public String getHour() {
+		return hour;
+	}
+	
+	public String getMinute(){
+		return minute;
 	}
 	
 	public String getDescription() {
@@ -46,7 +52,7 @@ public class Event {
 	@Override
 	public String toString() {
 		return "Event [eventId=" + eventId +", title=" + title + ", venue=" + venue + ", date="
-				+ date + ", time=" + time + ", desciption =" + description +"]";
+				+ date + ", hour=" + hour +", minute ="+ minute+ ", desciption =" + description +"]";
 	}
 
 	

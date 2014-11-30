@@ -16,6 +16,7 @@ import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.client.utils.URLEncodedUtils;
 import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.protocol.HTTP;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -71,6 +72,7 @@ public class JSONParser {
 		try {
 			BufferedReader reader = new BufferedReader(new InputStreamReader(
 					is, "iso-8859-1"), 8);
+			
 			StringBuilder sb = new StringBuilder();
 			String line = null;
 			while ((line = reader.readLine()) != null) {
@@ -81,7 +83,6 @@ public class JSONParser {
 		} catch (Exception e) {
 			Log.e("Buffer Error", "Error converting result - " + e.toString());
 		}
-
 		
 		// try parse the string to a JSON object
 		try {
@@ -93,6 +94,5 @@ public class JSONParser {
 
 		// return JSON String
 		return jObj;
-
 	}
 }

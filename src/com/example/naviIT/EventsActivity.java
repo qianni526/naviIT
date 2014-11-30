@@ -1,7 +1,9 @@
 package com.example.naviIT;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.TimeZone;
 
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
@@ -69,7 +71,8 @@ public class EventsActivity extends Activity implements OnItemClickListener {
 		String dialogTitle = events.get(position).getTitle().toString();
 		String venue = events.get(position).getVenue().toString();
 		String date = events.get(position).getDate().toString();
-		String time = events.get(position).getTime().toString();
+		String hour = events.get(position).getHour();
+		String minute = events.get(position).getMinute();
 		String description = events.get(position).getDescription().toString();
 		
 		View dialogView = getLayoutInflater().inflate(R.layout.dialog_event, null);
@@ -84,7 +87,15 @@ public class EventsActivity extends Activity implements OnItemClickListener {
 		tvDate.setText("Date: \n"+date);
 		TextView tvTime = (TextView) dialogView
 				.findViewById(R.id.tvTime);
-		tvTime.setText("Time: \n"+time);
+		//wat shld to to add am n pm???
+		
+		 int setTime=(Integer.parseInt(minute) * 60 + (Integer.parseInt(hour)+5) * 60 * 60) * 1000;
+		  SimpleDateFormat format = new SimpleDateFormat("h:mm a");
+		  format.setTimeZone(TimeZone.getTimeZone("UTC"));
+		   String formatted = format.format(setTime);
+		
+		tvTime.setText("Time: \n"+formatted);
+		
 		TextView tvDescription = (TextView) dialogView
 				.findViewById(R.id.tvDescription);		
 		tvDescription.setText("Details: \n" +description);
@@ -117,11 +128,7 @@ public class EventsActivity extends Activity implements OnItemClickListener {
 						}
 					})
 			.show();
-
 		
-		
-		
-			
 		//.setMessage("Venue: " + venue + "\nDate: "+ datetime + "\nDescription: "+ description)
 			
 	}
@@ -150,7 +157,13 @@ public class EventsActivity extends Activity implements OnItemClickListener {
 			textView3.setText(events.get(position).getDate());
 			TextView textView4 = (TextView) rowView
 					.findViewById(R.id.textView4);
-			textView4.setText(events.get(position).getTime());
+			//need to add am and p
+			int setTime=(Integer.parseInt(events.get(position).getMinute()) * 60 + (Integer.parseInt(events.get(position).getHour())+5) * 60 * 60) * 1000;
+			  SimpleDateFormat format = new SimpleDateFormat("h:mm a");
+			  format.setTimeZone(TimeZone.getTimeZone("UTC"));
+			   String formatted = format.format(setTime);
+			
+			   textView4.setText("Time: \n"+formatted);
 			return rowView;
 		}
 
@@ -169,7 +182,8 @@ public class EventsActivity extends Activity implements OnItemClickListener {
 		b.putString("title", e.getTitle());
 		b.putString("venue", e.getVenue());
 		b.putString("date", e.getDate());
-		b.putString("time", e.getTime());
+		b.putString("hour", e.getHour());
+		b.putString("minute", e.getMinute());
 		b.putString("description", e.getDescription());		
 		editIntent.putExtras(b);		
 		startActivity(editIntent);
@@ -198,7 +212,7 @@ public class EventsActivity extends Activity implements OnItemClickListener {
 					jArray = jObject.getJSONArray("events");
 					for(int i=0; i<jArray.length(); i++){
 						eventItem = jArray.getJSONObject(i);
-						events.add(new Event(eventItem.getString("eventId"),eventItem.getString("title"),eventItem.getString("venue"),eventItem.getString("date"),eventItem.getString("time"),eventItem.getString("description")));					
+						events.add(new Event(eventItem.getString("eventId"),eventItem.getString("title"),eventItem.getString("venue"),eventItem.getString("date"),eventItem.getString("hour"),eventItem.getString("minute"),eventItem.getString("description")));					
 					}
 					
 					

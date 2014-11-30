@@ -13,10 +13,9 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import com.example.naviIT.Splash.connectDB;
-
 import android.app.Activity;
 import android.app.AlarmManager;
+import android.app.DatePickerDialog;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
@@ -33,7 +32,11 @@ import android.view.View;
 import android.widget.Adapter;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.TextView;
+import android.widget.TimePicker;
 import android.widget.Toast;
 
 public class AddEventActivity extends Activity{
@@ -46,9 +49,13 @@ public class AddEventActivity extends Activity{
 	JSONArray jArray;
 	JSONObject eventItem;
 	
-	EditText title, venue, date, time, description;
+	EditText title, venue, description;
+	TextView date;
+	TimePicker time;
 	Button createNewEvent, cancel;
+	ImageButton chgDate;
 	ProgressDialog pd = null;
+	int mYear, mMonth, mDay;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -58,19 +65,46 @@ public class AddEventActivity extends Activity{
 		
 		title = (EditText) findViewById(R.id.etTitle);
 		venue = (EditText) findViewById(R.id.etVenue);
-		date = (EditText) findViewById(R.id.etDate);
-		time = (EditText) findViewById(R.id.etTime);
+		date = (TextView) findViewById(R.id.textDate);
+		time = (TimePicker) findViewById(R.id.timePicker1);
 		description = (EditText) findViewById(R.id.etDescription);
+		
+		final Calendar c = Calendar.getInstance();
+		mYear = c.get(Calendar.YEAR);
+		mMonth = c.get(Calendar.MONTH);
+		mDay = c.get(Calendar.DAY_OF_MONTH);
+		
+		date.setText(mYear + "-"+ (mMonth + 1) + "-" + mDay);
 		
 		createNewEvent = (Button) findViewById(R.id.btCreateNewEvent);
 		createNewEvent.setOnClickListener(new View.OnClickListener() {
 			
 			@Override
 			public void onClick(View v) {
-				// TODO Auto-generated method stub
 				connectDB connect = new connectDB();
 				connect.execute();
 				Log.d("Message", "connect db");
+			}
+		});
+		
+		chgDate = (ImageButton) findViewById(R.id.btChgDate);
+		chgDate.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {				
+				 
+				//launch datepicker dialog
+				DatePickerDialog dpd = new DatePickerDialog(AddEventActivity.this, new DatePickerDialog.OnDateSetListener() {
+				 
+				            @Override
+				            public void onDateSet(DatePicker view, int year,
+				                    int monthOfYear, int dayOfMonth) {
+				                date.setText(year + "-"
+				                        + (monthOfYear + 1) + "-" + dayOfMonth);
+				            }
+
+				        }, mYear, mMonth, mDay);
+				dpd.show();
 			}
 		});
 		
@@ -82,9 +116,7 @@ public class AddEventActivity extends Activity{
 				// cancel
 				finish();
 			}
-		});
-	
-		
+		});		
 	}
 	
 	@Override
@@ -94,7 +126,6 @@ public class AddEventActivity extends Activity{
 		IntentFilter filter = new IntentFilter("com.example.naviIT.REFRESH");
 		registerReceiver(refreshReceiver, filter);
 	}
-	
 	
 	@Override
 	protected void onPause() {
@@ -123,7 +154,8 @@ public class AddEventActivity extends Activity{
 			list.add(new BasicNameValuePair("title",title.getText().toString()));
 			list.add(new BasicNameValuePair("venue",venue.getText().toString()));
 			list.add(new BasicNameValuePair("date",date.getText().toString()));
-			list.add(new BasicNameValuePair("time",time.getText().toString()));
+			list.add(new BasicNameValuePair("hour",time.getCurrentHour().toString()));
+			list.add(new BasicNameValuePair("minute",time.getCurrentMinute().toString()));
 			list.add(new BasicNameValuePair("description",description.getText().toString()));
 			//JSONObject jObject = jsonparser.makeHttpRequest("http://10.0.2.2/login/addEvent.php", "GET", list);
 			JSONObject jObject = jsonparser.makeHttpRequest("http://naviit.webuda.com/addEvent.php", "GET", list);
@@ -149,6 +181,7 @@ public class AddEventActivity extends Activity{
                 AddEventActivity.this.pd.dismiss();
 			}
 			
+			
 			if(addEventFlag==true)
 			{
 				Toast.makeText(getApplicationContext(), "New event is created.", Toast.LENGTH_SHORT).show();	
@@ -156,6 +189,7 @@ public class AddEventActivity extends Activity{
 				finish();
 			}	
 			else{
+				Toast.makeText(getApplicationContext(), "Fail to create new event. Please try again.", Toast.LENGTH_SHORT).show();	
 				Log.d("Message", "Fail to create new event");
 			}
 			
@@ -194,7 +228,8 @@ public class AddEventActivity extends Activity{
 								eventItem.getString("title"), eventItem
 										.getString("venue"), eventItem
 										.getString("date"), eventItem
-										.getString("time"), eventItem
+										.getString("hour"),eventItem
+										.getString("minute"), eventItem
 										.getString("description")));
 					}
 				}
@@ -203,7 +238,6 @@ public class AddEventActivity extends Activity{
 				Log.d("Message", "status is fail");
 				e.printStackTrace();
 			}
-
 			return null;
 		}
 
@@ -221,7 +255,6 @@ public class AddEventActivity extends Activity{
 				for(i=0; i<events.size();i++){
 				
 					scheduleNotification(i);
-					
 				}
 			}
 
@@ -237,16 +270,15 @@ public class AddEventActivity extends Activity{
 			Calendar eventtime = Calendar.getInstance();
 			
 			try {			
-				String datetime = events.get(i).getDate() + " " + events.get(i).getTime();
-				SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+				String datetime = events.get(i).getDate() + " " + events.get(i).getHour()+":"+events.get(i).getMinute();
+				SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm");
 				date = simpleDateFormat.parse(datetime);
 				//Log.d("date", date.toString());
 				eventtime.setTime(date);
 			} catch (ParseException e1) {
 				// TODO Auto-generated catch block
 				e1.printStackTrace();
-			}
-			
+			}			
 			
 			//one hour before event time
 			//eventtime.add(Calendar.HOUR, -1);
@@ -255,30 +287,28 @@ public class AddEventActivity extends Activity{
 			
 			long when = eventtime.getTimeInMillis();	
 			
-			
 			Log.d("Message", "Now time : " + now + ", millis: " + when);
 			if (when > now) {
-				// upcoming event will be scheduled for notification
-							
+				// upcoming event will be scheduled for notification		
 				
 				Log.d("Message","Events that are upcoming: "+events.get(i).getTitle().toString());
 				cal.set(eventtime.get(Calendar.YEAR), eventtime.get(Calendar.MONTH), eventtime.get(Calendar.DATE), eventtime.get(Calendar.HOUR_OF_DAY), eventtime.get(Calendar.MINUTE), eventtime.get(Calendar.SECOND));	
 				when = cal.getTimeInMillis(); 
 				Log.d("Message","Time to notify = "+cal.getTime().toString());	
-				
-				//Intent j = new Intent(getApplicationContext(), MainService.class);
+
 				Intent j = new Intent(getApplicationContext(), MainService.class);
 				Bundle c = new Bundle();
 				c.putString("eventId", events.get(i).getEventId());
 				c.putString("title", events.get(i).getTitle());
 				c.putString("venue", events.get(i).getVenue());
 				c.putString("date", events.get(i).getDate());
-				c.putString("time", events.get(i).getTime());
+				c.putString("hour", events.get(i).getHour());
+				c.putString("minute", events.get(i).getMinute());
 				c.putString("description", events.get(i).getDescription());		
 				j.putExtras(c);
 				PendingIntent pint = PendingIntent.getService(getApplicationContext(), i, j, 0);
+				Log.d("msg", "i value = "+i);
 				// 1min after app start
-				
 				// mgr.set(AlarmManager.ELAPSED_REALTIME_WAKEUP,
 				// SystemClock.elapsedRealtime() + PERIOD, pint);
 				AlarmManager mgr = (AlarmManager) getApplicationContext().getSystemService(Context.ALARM_SERVICE);
@@ -292,16 +322,13 @@ public class AddEventActivity extends Activity{
 						// TODO Auto-generated method stub
 					}
 				};
+				
 			}else{
 				Log.d("Message","Past events: "+events.get(i).getTitle().toString());
 				Log.d("Message","when<now, notification not sent");
-			}
-			
+			}		
 		}
-
 	}
-
-
 }
 
 

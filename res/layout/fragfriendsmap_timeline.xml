@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:descendantFocusability="blocksDescendants" >
+    
+		    <FrameLayout
+		        android:id="@+id/searchLayout"
+			    android:layout_width="fill_parent"
+			    android:layout_height="wrap_content"
+			    android:visibility="gone"
+			    >
+		    
+		     <!-- Editext for Search -->
+			    <EditText android:id="@+id/inputSearch"
+			        android:layout_width="fill_parent"
+			        android:layout_height="46dp"
+			        android:drawableLeft="@drawable/ic_search"
+			        android:textSize="20dp"
+			        android:hint="Search"/>
+			
+			    <ImageButton
+			        android:id="@+id/clear_txt"
+			        android:layout_width="30dp"
+		        	android:layout_height="30dp"
+			        android:layout_marginRight="10dp"
+			        android:layout_gravity="right|center_vertical"
+			        android:src="@drawable/clear_button"
+			        android:background="@null" />
+		
+		    </FrameLayout>
+		
+		    <LinearLayout
+		        android:id="@+id/listViewLayout"
+			    android:layout_width="match_parent"
+			    android:layout_height="match_parent"
+				android:layout_weight="0.12"
+			    >
+					    
+				    <ListView
+				        android:id="@+id/listView1"
+				        android:layout_width="match_parent"
+				        android:layout_height="wrap_content"
+				         >
+				    </ListView>
+		    </LinearLayout>
+	
+		    
+    <LinearLayout
+        android:id="@+id/bottomButtonLayout"
+	    android:layout_width="fill_parent"
+	    android:layout_height="fill_parent"
+	    android:orientation="horizontal"
+	    android:background="@color/white"
+	    android:weightSum="3"
+	    android:gravity="bottom"
+	    android:layout_alignParentBottom="true"
+	    android:layout_weight="0.9">
+	
+	     <Button
+	        android:id="@+id/btCheckin"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text="Check In"
+	        android:layout_weight="1.5"
+	        android:paddingLeft="15dp"
+	        android:paddingRight="15dp"
+	        android:textColor="@color/white"
+	        android:textStyle="bold"
+	        android:textAppearance="?android:attr/textAppearanceMedium"
+	        android:drawableLeft="@drawable/ic_indicator"
+	        android:gravity="center"
+	    	android:layout_alignParentBottom="true"
+	    	android:background="@color/list_background"
+	        />
+	     
+	     <View
+		    android:layout_width="1dp"
+		    android:layout_height="match_parent"
+		    
+		    android:background="@android:color/white"/>
+	     
+	      <ToggleButton
+	        android:id="@+id/btSearch"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:textOff="Search"
+			android:textOn="Hide Search" 
+	        android:drawableLeft="@drawable/ic_action_search_white"
+	        android:paddingLeft="15dp"
+	        android:paddingRight="15dp"
+	        android:textColor="@color/white"
+	        android:textStyle="bold"
+	        android:textAppearance="?android:attr/textAppearanceMedium"
+	        android:layout_weight="1.5"
+	        android:gravity="center"
+	    	android:layout_alignParentBottom="true"
+	    	android:background="@color/list_background"
+	        />
+	
+	
+	 </LinearLayout>	 
+
+</LinearLayout>

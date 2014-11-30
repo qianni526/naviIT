@@ -12,7 +12,8 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
    	<uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
-    
+   	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
     
     <application
         android:allowBackup="true"
@@ -24,6 +25,16 @@
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MainActivity" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:theme="@android:style/Theme.Dialog" 
+            android:name="com.example.naviIT.showInfo"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.showInfo" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
@@ -87,7 +98,107 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        	<service
+        <activity
+            android:name=".ScanningActivity"></activity>
+        <activity
+            android:name=".MockLocationFeedsActivity">
+            </activity>
+            <activity
+            android:name=".CheckInActivity2">
+            </activity>
+
+       	  <activity android:name=".Pedometer"
+                  android:label="@string/app_name"
+                  android:configChanges="orientation">
+            <intent-filter>
+                <action android:name="android.intent.action.Pedometer" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        
+       	  <activity
+            android:name=".OfflineRouteActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.OFFLINEROUTEACTIVITY" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        
+       	  <activity
+            android:name=".SearchPlacesInCheckIn"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCHPLACESINACTIVITY" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        
+       	  <activity
+            android:name=".Checkin"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.CHECKIN" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        
+       	  <activity
+            android:name=".EditCheckInActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.EDITCHECKINACTIVITY" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        
+       	  <activity
+            android:name=".EditPlacesInCheckIn"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.EDITPLACESINCHECKIN" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        
+       	<activity
+            android:name=".ControlFriendsActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.CONTROLFRIENDSACTIVITY" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>  
+        
+       	<activity
+            android:name=".AddFriends"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.ADDFRIENDS" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>  
+        
+       	<activity
+            android:name=".ConfirmFriends"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.CONFIRMFRIENDS" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>  
+       	 
+        <service android:name="com.example.naviIT.StepService" />
+       	
+       	<service
             android:name=".MainService"
             android:enabled="true">
         </service>

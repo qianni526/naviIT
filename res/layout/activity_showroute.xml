@@ -1,0 +1,81 @@
+<FrameLayout
+    android:id="@+id/layout"
+    android:orientation="horizontal"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:gesture-image="http://schemas.polites.com/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+	android:background="@color/map_background">
+
+ 	 <LinearLayout
+	        android:id="@+id/layout2"
+		    android:orientation="horizontal"
+		    android:layout_width="fill_parent"
+		    android:layout_height="fill_parent">
+		    
+	 </LinearLayout>
+	 
+ 	
+	 	 
+	 <RelativeLayout
+	    android:layout_width="fill_parent"
+	    android:layout_height="fill_parent"
+	    android:background="@color/map_background"
+	    android:visibility="invisible" >
+	
+	     <ImageView
+	         android:id="@+id/imageView1"
+	         android:layout_width="wrap_content"
+	         android:layout_height="wrap_content"
+	         android:layout_marginLeft="10dp"
+	         android:layout_marginBottom="5dp"
+	         android:src="@drawable/ic_action_about"
+	         android:layout_gravity="bottom" 
+		     android:layout_alignParentBottom="true" />
+
+	     <TextView
+	         android:id="@+id/directionInfo"
+	         android:layout_width="wrap_content"
+	         android:layout_height="wrap_content"
+	         android:layout_marginLeft="10dp"
+	         android:layout_marginBottom="12dp"
+	         android:layout_toRightOf="@+id/imageView1"
+	         android:text="Go To Directions"
+	         android:textAppearance="?android:attr/textAppearanceSmall"
+	         android:layout_gravity="bottom" 
+		     android:layout_alignParentBottom="true" />
+	
+	  </RelativeLayout>	 
+ 	  
+ 	  
+	 	 <LinearLayout
+	        android:id="@+id/layout1"
+		    android:orientation="horizontal"
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content"   
+		    android:weightSum="1.8"
+		    android:background="@color/map_background">
+	    
+		    <Spinner
+		        android:id="@+id/blockSpinner"
+		        android:layout_width="0dp"
+		        android:layout_height="wrap_content"
+		        android:layout_weight=".8" 
+		        android:paddingTop="10dp"/>
+		
+		   <Spinner
+		        android:id="@+id/levelSpinner"
+		        android:layout_width="0dp"
+		        android:layout_height="wrap_content"
+		        android:layout_weight="1" 
+		        android:paddingTop="10dp"/>
+	
+		    <ImageButton
+		        android:id="@+id/btReset"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:src="@android:drawable/ic_menu_revert" />
+    
+	    </LinearLayout>
+
+</FrameLayout>

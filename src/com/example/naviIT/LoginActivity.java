@@ -6,6 +6,7 @@ import java.util.List;
 
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -34,16 +35,24 @@ public class LoginActivity extends Activity {
 	EditText username, password;
 	Button login, signUp;
 	ProgressDialog pd = null;
+	JSONArray jArray;
+	JSONObject userItem;
+	ArrayList<User> user;
+	
+	// Session Manager Class
+    SessionManager session;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_login);
 		 
-		
 		//Intent i = new Intent(this, MainService.class);
 		//startService(i);
 
+		// Session Manager
+        session = new SessionManager(getApplicationContext());                
+		
 		username = (EditText) findViewById(R.id.etUsername);
 		password = (EditText) findViewById(R.id.etPassword);
 		signUp = (Button) findViewById(R.id.btSignUp);
@@ -67,7 +76,7 @@ public class LoginActivity extends Activity {
 				}else{
 					connectDB connect = new connectDB();
 					connect.execute();
-					
+					//newIntent();
 				}
 			}
 		});
@@ -119,6 +128,15 @@ public class LoginActivity extends Activity {
 				if(jObject.getString("status").equals("success"))
 				{
 					loginFlag = true;
+					jArray = jObject.getJSONArray("userItems");
+					for (int j = 0; j < jArray.length(); j++) {
+						userItem = jArray.getJSONObject(j);
+						user.add(new User(userItem.getInt("ID"),
+								userItem.getString("username"), 
+								userItem.getString("firstname"), 
+								userItem.getString("lastname"),
+								userItem.getString("isAdmin")));
+					}
 				}
 			} catch (JSONException e) {
 				// TODO Auto-generated catch block
@@ -137,6 +155,7 @@ public class LoginActivity extends Activity {
 			
 			if(loginFlag==true)
 			{
+				session.createLoginSession(username.getText().toString(),password.getText().toString(), user.get(0).getId());
 				newIntent();
 			}	
 			else{	

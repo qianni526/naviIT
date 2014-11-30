@@ -5,6 +5,7 @@
            parent="@android:style/Theme.Holo.Light.DarkActionBar">
         <item name="android:actionBarStyle">@style/MyActionBar</item>
         <item name="android:actionMenuTextColor">#69023e</item>
+        <item name="android:activatedBackgroundIndicator">@drawable/listitem_background</item>
     </style>
 
     <!-- ActionBar styles -->

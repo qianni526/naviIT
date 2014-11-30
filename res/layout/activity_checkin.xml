@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="5dp"
+    android:orientation="vertical"
+     android:background="@color/map_background" >
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:text="Check In"
+        android:textColor="#8066FF"
+        android:textStyle="bold"    
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+	    <EditText
+	        android:id="@+id/etContent"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:inputType="textMultiLine"
+	        android:layout_marginLeft="10dp"
+	        android:layout_marginRight="10dp"
+	        android:paddingLeft="10dp"
+	        android:paddingRight="10dp"
+	        android:hint="What's on your mind?"
+	        android:background="@color/list_section_background"/>
+
+	    <TextView
+	        android:id="@+id/tvRoom"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text="Medium Text"
+	        android:gravity="center_vertical"
+	        android:drawableLeft="@drawable/ic_indicator"
+	        android:padding="10dp"
+	        android:textColor="@color/list_background"
+	        android:textAppearance="?android:attr/textAppearanceSmall" />
+		    
+		    <LinearLayout
+		        android:layout_width="match_parent"
+		        android:layout_height="wrap_content" 
+		        android:layout_marginTop="20dp"
+		        android:layout_marginRight="10dp"
+		        android:gravity="right">
+
+		        <Button
+		            android:id="@+id/btPost"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:background="#734DFF"
+		            android:layout_marginRight="10dp"
+        			android:textColor="@android:color/white" 
+		            android:text="Post" />
+		        
+		        <Button
+		            android:id="@+id/btCancel"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:background="#BCB5E6"
+        			android:textColor="@android:color/white"
+		            android:text="Cancel" />
+
+		    </LinearLayout>
+    
+</LinearLayout>
+

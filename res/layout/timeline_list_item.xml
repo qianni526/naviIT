@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:padding="5dp"
+    android:descendantFocusability="blocksDescendants" >
+    
+    <RelativeLayout 
+	   android:layout_width="match_parent"
+	   android:layout_height="wrap_content"
+	   android:gravity="center_vertical"
+	   android:padding="5dp"
+	   android:minHeight="?android:attr/listPreferredItemHeightSmall"
+	   android:background="@color/map_background"
+	   >
+    
+	    <RelativeLayout 
+	       android:id="@+id/details"
+		   android:layout_width="match_parent"
+		   android:layout_height="wrap_content"
+		   android:gravity="center_vertical"
+		   android:padding="5dp"
+		   android:minHeight="?android:attr/listPreferredItemHeightSmall"
+		   >
+	
+			    <ImageView
+			       android:id="@+id/profile_pic"
+			       android:layout_width="48dp"
+			       android:layout_height="48dp"
+			       android:src="@drawable/ic_action_person"
+			     />
+	
+			    <LinearLayout
+			        
+			        android:layout_width="match_parent"
+			        android:layout_height="wrap_content"
+			        android:orientation="vertical"
+			        android:paddingLeft="10dp"
+			        android:layout_toRightOf="@id/profile_pic"
+	       			>
+			
+				         <TextView
+				            android:id="@+id/tvUsername"
+				            android:layout_width="wrap_content"
+				            android:layout_height="wrap_content"
+				            android:text="Username"
+				            android:textStyle="bold"
+				            android:textColor="@color/list_background"
+				            android:textAppearance="?android:attr/textAppearanceMedium" />
+				
+			         
+					        <TextView
+					            android:id="@+id/tvTimestamp"
+					            android:layout_width="wrap_content"
+					            android:layout_height="wrap_content"
+					            android:text="Nov 27, 2014  09:05PM"
+					            android:textColor="#666666"
+					            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+					        
+					        
+			   			 	</LinearLayout>
+			    
+			    <ImageButton
+				        android:id="@+id/btEdit"
+				        android:layout_width="25dp"
+				        android:layout_height="25dp"
+				        android:layout_alignParentRight="true"
+				        android:layout_marginRight="5dp"
+				        android:background="@null"
+				        android:src="@drawable/ic_action_edit"
+				        android:visibility="invisible" />
+	
+	    </RelativeLayout>
+    
+	    <LinearLayout
+	        	android:id="@+id/contentLayout"
+		        android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        android:layout_below="@+id/details">
+
+		    <TextView
+		            android:id="@+id/tvContent"
+		            android:layout_width="match_parent"
+		            android:layout_height="wrap_content"
+		            android:text="I am here! Hello everyone~ nice to meet you. Please come here to find me." 
+		            android:textColor="#000000"
+		            android:background="@color/map_background"
+					android:paddingTop="5dp"
+					android:paddingBottom="5dp"
+		            android:paddingLeft="10dp"
+		            android:paddingRight="10dp"
+		            android:textAppearance="?android:attr/textAppearanceSmall" />
+		    
+		    </LinearLayout>
+	    	 
+	    	<LinearLayout
+	        	android:id="@+id/buttonLayout"
+		        android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        android:layout_below="@+id/contentLayout">
+		    
+		    	 <RelativeLayout 
+					   android:layout_width="match_parent"
+					   android:layout_height="wrap_content"
+					   android:paddingTop="5dp">
+				         		
+		    	       <Button
+				            android:id="@+id/btVenue"
+				            style="?android:attr/buttonStyleSmall"
+				            android:layout_width="wrap_content"
+				            android:layout_height="wrap_content"
+				            android:background="@null"
+				            android:text="Office"
+				            android:layout_toRightOf="@+id/indicator"
+				            android:layout_marginRight="70dp"
+				            android:drawableLeft="@drawable/ic_indicator"
+				            android:minHeight="?android:attr/listPreferredItemHeightSmall"/>
+		    	       
+		    	       <Button
+				            android:id="@+id/btNavigate"
+				            style="?android:attr/buttonStyleSmall"
+				            android:layout_width="wrap_content"
+				            android:layout_height="wrap_content"
+				            android:layout_alignParentRight="true" 
+				            android:layout_marginLeft="150dp"
+				            android:padding="5dp"
+				            android:background="#734DFF"
+				            android:textColor="@color/white"
+				            android:text="Navigate"
+				            />
+	    	     
+	    	     </RelativeLayout>
+		    </LinearLayout>
+	     
+	     
+    </RelativeLayout>
+    
+</LinearLayout>

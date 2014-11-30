@@ -1,0 +1,49 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff"
+    android:padding="10dp">
+    
+   
+    <TextView
+        android:id="@+id/labelBlockName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/labelBlockName"
+         android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#8066FF"/>
+    
+    <EditText 
+        android:id="@+id/editBlockName"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/labelBlockName"
+        android:inputType="text"/>
+    
+    <Spinner 
+        android:id="@+id/spinnerBlockName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editBlockName"/>
+    
+    <Button 
+        android:id="@+id/btnConfirmLocation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/spinnerBlockName"
+        android:text="@string/btnConfirmLocation"
+        android:background="#734DFF"
+        android:textColor="@android:color/white"
+        android:padding="10dp"/>
+
+    <ProgressBar
+        android:id="@+id/progressBarInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/editBlockName"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="21dp" />
+    
+</RelativeLayout>
+

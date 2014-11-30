@@ -1,6 +1,9 @@
 package com.example.naviIT;
 
 
+import java.text.SimpleDateFormat;
+import java.util.TimeZone;
+
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
@@ -21,9 +24,17 @@ public class RefreshReceiver extends BroadcastReceiver{
 		// an Intent broadcast.
 		
 		Bundle b = intent.getExtras();
+		int eventId = Integer.parseInt(b.getString("eventId"));
 		String title = b.getString("title");
 		String venue = b.getString("venue");
-		String time = b.getString("time");
+		String hour = b.getString("hour");
+		String minute = b.getString("minute");
+		
+		int setTime=(Integer.parseInt(minute) * 60 + (Integer.parseInt(hour)) * 60 * 60) * 1000;
+		
+		SimpleDateFormat format = new SimpleDateFormat("hh:mm a");
+		format.setTimeZone(TimeZone.getTimeZone("UTC"));
+		   String formatted = format.format(setTime);
 		
 		/*String action = intent.getAction();
 
@@ -35,11 +46,11 @@ public class RefreshReceiver extends BroadcastReceiver{
 		*/
 		Log.d("Message", "In refreshReceiver, title is "+title);
 		
-		PendingIntent pi = PendingIntent.getActivity(context, 0, new Intent(context,  EventsActivity.class), 0);
+		PendingIntent pi = PendingIntent.getActivity(context, eventId, new Intent(context,  EventsActivity.class), 0);
 		NotificationCompat.Builder builder = new NotificationCompat.Builder(context)
 			.setAutoCancel(true)
 			.setContentIntent(pi)
-			.setContentText(venue + " " + time)
+			.setContentText(venue + " " + formatted)
 			.setContentTitle(title)
 			.setSmallIcon(R.drawable.ic_launcher)
 			.setTicker(title)

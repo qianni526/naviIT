@@ -5,6 +5,7 @@
     android:layout_centerHorizontal="true"
     android:layout_centerVertical="true"
     android:orientation="vertical"
+    android:background="@color/map_background"
     tools:context="com.example.login.MainActivity$PlaceholderFragment" >
         
         <Button
@@ -14,7 +15,8 @@
             android:background="#734DFF"
             android:text="Create New Event"
             android:layout_margin="5dp"
-            android:textColor="@android:color/white" />
+            android:textColor="@android:color/white"
+            android:visibility="gone" />
    
     <ListView
         android:id="@+id/listView1"

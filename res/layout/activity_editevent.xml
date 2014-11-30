@@ -3,7 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="5dp"
-    android:orientation="vertical" >
+    android:orientation="vertical" 
+    android:background="@color/map_background">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -75,18 +76,27 @@
 		        android:paddingLeft="8dp"
 		        android:textAppearance="?android:attr/textAppearanceMedium" />
 	
-		    <EditText
-		        android:id="@+id/etDate"
+		    <TextView
+		        android:id="@+id/textDate"
 		        android:layout_width="wrap_content"
 		        android:layout_height="wrap_content"
 		        android:layout_alignParentTop="true"
 		        android:layout_marginLeft="23dp"
+		        android:layout_toLeftOf="@+id/btChgDate"
 		        android:layout_toRightOf="@+id/tVDate"
 		        android:ems="10"
-		        android:hint="YYYY-MM-DD"
-		        android:inputType="date"
 		        android:padding="10dp"
-		        android:singleLine="true" />
+		        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+		    <ImageButton
+		        android:id="@+id/btChgDate"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:layout_alignParentRight="true"
+		        android:layout_centerVertical="true"
+		        android:layout_marginRight="73dp"
+		        android:background="@null"
+		        android:src="@drawable/ic_action_edit" />
 		    
 		</RelativeLayout>
 	
@@ -95,25 +105,20 @@
 	        android:layout_height="wrap_content" >
 	        
 	        <TextView
-	        android:id="@+id/tVDate"
+	        android:id="@+id/tVtime"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
 	        android:text="Time: "
 	        android:paddingTop="8dp"
 	        android:paddingLeft="8dp"
 	        android:textAppearance="?android:attr/textAppearanceMedium" />
-	
-		    <EditText
-		        android:id="@+id/etTime"
-		        android:layout_width="wrap_content"
-		        android:layout_height="wrap_content"
-		        android:layout_alignParentTop="true"
-		        android:layout_marginLeft="16dp"
-		        android:layout_toRightOf="@+id/tVDate"
-		        android:ems="10"
-		        android:hint="HH:MM:SS"
-		        android:inputType="time"
-		        android:singleLine="true" />
+
+	        <TimePicker
+	            android:id="@+id/timePicker1"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_alignParentRight="true"
+	            android:layout_alignParentTop="true" />
 		        
 	    </RelativeLayout>
 	    
@@ -167,6 +172,8 @@
 	    </LinearLayout>
  
  	</ScrollView>
+
+    
 
 </LinearLayout>
 

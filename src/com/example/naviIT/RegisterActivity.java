@@ -109,7 +109,6 @@ public class RegisterActivity extends Activity {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			
 			return null;
 		}
 
@@ -126,8 +125,9 @@ public class RegisterActivity extends Activity {
 				Toast.makeText(getApplicationContext(), "New account created.", Toast.LENGTH_SHORT).show();
 				newIntent();
 			}	
-			else{
+			else{				
 				Log.d("Message", "Fail to sign up");
+				Toast.makeText(getApplicationContext(), "Fail to sign up. Please try again", Toast.LENGTH_SHORT).show();
 			}
 		}
 		

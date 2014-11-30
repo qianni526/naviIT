@@ -1,0 +1,75 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.sinyee.navigatortesterv4.MainActivity$PlaceholderFragment"
+    android:padding="10dp" >
+    
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    
+    <TextView 
+        android:id="@+id/editData"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    
+    <Button 
+        android:id="@+id/btnGenerate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editData"
+        android:text="@+string/btnGenerate"
+        android:background="#734DFF"
+        android:textColor="@android:color/white"
+        android:padding="10dp"/>
+    
+    
+    <ImageView 
+	    android:id="@+id/qrCode"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_below="@+id/btnGenerate"
+	    android:layout_marginTop="50dp"
+	    android:layout_centerHorizontal="true"
+	    android:contentDescription="@string/qrCode"/>
+    
+   <Button 
+        android:id="@+id/btnSaveQRCode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/qrCode"
+        android:text="@+string/btnSaveQRCode"
+        android:background="#734DFF"
+        android:textColor="@android:color/white"
+        android:padding="10dp"
+		android:layout_margin="10dp"/>
+   
+   <Button
+       android:id="@+id/btnSaveQRDb"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_below="@+id/btnEmailQRCode"
+       android:text="@string/btnSaveQRDb"
+       android:background="#734DFF"
+        android:textColor="@android:color/white"
+        android:padding="10dp"
+        android:layout_margin="10dp"/>
+   
+   <Button
+       android:id="@+id/btnEmailQRCode"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_below="@+id/btnSaveQRCode"
+       android:text="@string/btnEmailQRCode"
+       android:background="#734DFF"
+        android:textColor="@android:color/white"
+        android:padding="10dp"
+       android:layout_margin="10dp"/>
+    
+    
+    
+  	</RelativeLayout>
+  	
+ </ScrollView>
